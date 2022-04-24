@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Practice
+{
+    public partial class GreetingCard : Form
+    {
+        public GreetingCard()
+        {
+            InitializeComponent();
+        }
+
+        private void txto_TextChanged(object sender, EventArgs e)
+        {
+            lbltoprint.Text = txto.Text;
+        }
+
+        private void txtfrom_TextChanged(object sender, EventArgs e)
+        {
+            lblfromprint.Text = txtfrom.Text;
+        }
+
+        private void btntofont_Click(object sender, EventArgs e)
+        {
+            if(fontDialog1.ShowDialog()==DialogResult.OK)
+            {
+                lbltoprint.Font= fontDialog1.Font;
+            }
+        }
+
+        private void btntocolor_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                lbltoprint.ForeColor = colorDialog1.Color;
+            }
+        }
+
+        private void btnloadimg_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                pictureBox1.Image=Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void btnfromfont_Click(object sender, EventArgs e)
+        {
+            if(fontDialog1.ShowDialog()==DialogResult.OK)
+            {
+                lblfromprint.Font = fontDialog1.Font;
+            }
+        }
+
+        private void btnfromcolor_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                lblfromprint.ForeColor = colorDialog1.Color;
+            }
+        }
+    }
+}

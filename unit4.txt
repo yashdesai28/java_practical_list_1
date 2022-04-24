@@ -1,0 +1,81 @@
+if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
+
+=========================================================================
+ if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
+========================================================================
+ if (openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                richTextBox1.LoadFile(openFileDialog1.FileName,RichTextBoxStreamType.PlainText);
+            }
+============================================================================
+saveFileDialog1.Filter = "txt files (.txt) | *.txt | All Files (.)|.*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName,richTextBox1.Text);
+                MessageBox.Show("Saved Successfully.");
+            }
+===============================================================================
+clickevent 
+=======================================
+add
+clear
+remove
+expendall
+count
+collapse
+====================================================================================
+add
+treeView1.Nodes.Add(txtnode.Text);
+child===
+treeView1.SelectedNode.Nodes.Add(txtnode.Text);
+
+	or
+
+private void btnroot_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Add(txtnode.Text);
+        }
+
+        private void btnchild_Click(object sender, EventArgs e)
+        {
+            treeView1.SelectedNode.Nodes.Add(txtnode.Text);
+        }
+========================================================================================
+ private void btncount_Click(object sender, EventArgs e)
+        {
+            int total=treeView1.Nodes.Count;
+            MessageBox.Show("Total : "+total);
+        }
+=======================================================================================
+name,backcolor,fount,visible
+
+===================================================================
+MenuStrip Control
+
+1 .It creates a custom menu on a Windows form.
+2.It has a top-level menu.
+3.It is visible at runtime without invoking an object by right-clicking the mouse button.
+4.It is designed to replace the MainMenu control.
+
+ContextMenuStrip Control
+
+1.It creates a custom context menu on a Windows form.
+2.It does not have a top-level menu.
+3.It is visible at runtime unless an object is invoked by right-clicking the mouse button.
+4.It is designed to replace the ContextMenu control.
+=======================================================
+extraa 6e
+===============================================================
+propaties
+opendilogbox=name,addextention,chekfileExists,multiselect
+savedilogbox=name,chekfileExists,chekpathexist,titel
+colordilogbox=name,color,fullopen,showhelp
+fountdilogbox=name,fount,showcolor,showapply
+
+

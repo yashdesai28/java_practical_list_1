@@ -1,0 +1,6 @@
+ conn.Close();
+         conn.Open();
+	sqlcommand cmd=new sqlcommand("insert into tblProduct values ('"+txtname.Text+"',"+txtprice.Text+","+txtqty.Text+");",conn);
+        cmd.ExecuteNonQuery();
+        conn.Close();
+        MessageBox.Show("Record Inserted Successfully");

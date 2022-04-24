@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Practice
+{
+    public partial class ListView : Form
+    {
+        public ListView()
+        {
+            InitializeComponent();
+        }
+
+        private void ListView_Load(object sender, EventArgs e)
+        {
+            listView1.GridLines = true;
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+
+            listView1.Columns.Add("Employee ID",100,HorizontalAlignment.Center);
+            listView1.Columns.Add("First Name",100);
+            listView1.Columns.Add("Last Name",100);
+            listView1.Columns.Add("City",100);
+            listView1.Columns.Add("Contact No",100);
+            listView1.Columns.Add("Date Of Joining",100);
+            listView1.Columns.Add("Salary", 100);
+
+            string[] arr = new string[7];
+            ListViewItem i;
+
+            arr[0] = "1";
+            arr[1] = "Anvi";
+            arr[2] = "Patel";
+            arr[3] = "Navapur";
+            arr[4] = "7972322606";
+            arr[5] = "11-06-2020";
+            arr[6] = "50000";
+            i=new ListViewItem(arr);
+            listView1.Items.Add(i);
+
+            arr[0] = "2";
+            arr[1] = "Dhyan";
+            arr[2] = "Patel";
+            arr[3] = "Navapur";
+            arr[4] = "9623701286";
+            arr[5] = "19-06-2020";
+            arr[6] = "25000";
+            i = new ListViewItem(arr);
+            listView1.Items.Add(i);
+
+        }
+    }
+}
